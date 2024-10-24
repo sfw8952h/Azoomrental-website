@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZoom Car Rental</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="top-nav-bar">
+        <div class="name">AZoom Car Rental</div>
+        <div class="nav-links">
+            <a href="#about">About Us</a>
+            <a href="#process">Process</a>
+            <a href="#reserve">Reserve Now</a>
+            <a href="#return">Return Car</a>
+        </div>
+    </div>
+    <div id="about" class="section">
+        <div class="content">
+            <h1 style="font-size: 56px;">About Us</h1>
+            <p style="font-size: 20px;">AZoom Car Rental is a local car rental company that specializes in renting electric cars
+                for the public. 
+                <br>There is a range of electric cars available and for the environmentally
+                conscious customers, <br>AZoom Car Rental offers an attractive option for transportation.</p>
+        </div>
+        <div>
+            <button class="oval-button" onclick="document.getElementById('reserve').scrollIntoView({ behavior: 'smooth' });">Book Now</button>
+            <button class="oval-button" onclick="document.getElementById('return').scrollIntoView({ behavior: 'smooth' });">Return</button>
+        </div>
+    </div>
+    <div id="process" class="section">
+        <h1 style="font-size: 80px;">Process</h1>
+        <div class="card-container">
+            <div class="card">
+                <h2>Step 1</h2>
+                <p style="font-size: 20px;">Customer rents car at the AZoom Car Rental office.</p>
+            </div>
+            <div class="card">
+                <h2>Step 2</h2>
+                <p style="font-size: 20px;">Customer returns car at a designated car park.</p>
+            </div>
+            <div class="card">
+                <h2>Step 3</h2>
+                <p style="font-size: 20px;">Employee of AZoom Car Rental inspects the returned car to ensure no damages.</p>
+            </div>
+            <div class="card">
+                <h2>Step 4</h2>
+                <p style="font-size: 20px;" >Customer pays final bill – cost of rental and including any damages found.</p>
+            </div>
+        </div>
+    </div>
+    <div id="reserve" class="section">
+        <h1>Reserve Now</h1>
+        <div class="form-card">
+            <form id="reservationForm">
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <span class="error-message">Please fill out this field.</span>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+                <span class="error-message">Please fill out this field.</span>
+                <input type="email" name="email" placeholder="Email" required>
+                <span class="error-message">Please fill out this field.</span>
+                <select name="branch" required>
+                    <option value="" disabled selected>Select Branch</option>
+                    <option value="branch1">Branch 1</option>
+                    <option value="branch2">Branch 2</option>
+                </select>
+                <span class="error-message">Please fill out this field.</span>
+                <select name="car" required>
+                    <option value="" disabled selected>Select Electric Car</option>
+                    <option value="car1">Tesla</option>
+                    <option value="car2">BYD</option>
+                    <option value="car3">Hyundai</option>
+                </select>
+                <span class="error-message">Please fill out this field.</span>
+                <label for="pickupDate">Pick-up Date</label>
+                <input type="date" name="pickupDate" id="pickupDate" required>
+                <span class="error-message">Please fill out this field.</span>
+                <label for="dropoffDate">Drop-off Date</label>
+                <input type="date" name="dropoffDate" id="dropoffDate" required>
+                <span class="error-message">Please fill out this field.</span>
+                <button type="button" id="reserveButton">Reserve</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- New Return Car Section -->
+    <div id="return" class="section">
+        <h1>Return Car</h1>
+        <div class="form-card">
+            <form id="returnForm">
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <span class="error-message">Please fill out this field.</span>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+                <span class="error-message">Please fill out this field.</span>
+                <input type="email" name="email" placeholder="Email" required>
+                <span class="error-message">Please fill out this field.</span>
+                <label for="returnDate">Return Date</label>
+                <input type="date" name="returnDate" id="returnDate" required>
+                <span class="error-message">Please fill out this field.</span>
+                <select name="condition" required>
+                    <option value="" disabled selected>Condition</option>
+                    <option value="Good">Good</option>
+                    <option value="Damaged">Damaged</option>
+                </select>
+                <span class="error-message">Please fill out this field.</span>
+                <button type="button" id="returnButton">Return for inspection</button>
+            </form>
+            <p class="confirmation-message" id="confirmationMessage">You have been billed!</p>
+        </div>
+    </div>
+
+    <!-- Modal for Payment Information -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Payment Information</h2>
+            <form id="paymentForm">
+                <input type="text" name="cardNumber" placeholder="Card Number" required>
+                <input type="text" name="cardName" placeholder="Name on Card" required>
+                <input type="text" name="expiryDate" placeholder="Expiry Date (MM/YY)" required>
+                <input type="text" name="cvv" placeholder="CVV" required>
+                <button type="submit">Submit Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
